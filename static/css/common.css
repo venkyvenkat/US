@@ -1,0 +1,111 @@
+ul.list-style-none li {
+	list-style: none;
+}
+.form-card-custom{
+    border-radius: 10px;
+    padding:15px;
+    min-height: calc(100vh - 250px);
+}
+ul.left-qus-pane{
+    padding:10px;
+    background-color: #4c5181;
+    min-width: 300px;
+    height: 100%;
+    margin:0;
+    position: relative;
+    border-radius: 6px;
+}
+ul.left-qus-pane li{
+    padding:10px;
+    position: relative;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius: 6px;
+    color: rgba(255,255,255,.5);
+    margin-bottom: 10px;
+}
+ul.left-qus-pane li.active-effect{
+    background-color: #fff;
+    color:#4c5181;
+}
+
+span.curve-effect{
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 15px;
+    height: 100%;
+    background-color: #fff;
+}
+ul.left-qus-pane li .curve-effect:after,
+ul.left-qus-pane li .curve-effect:before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: -5px;
+}
+ul.left-qus-pane li .curve-effect:after{
+    -moz-border-radius:0 0 10px 0;
+    -webkit-border-radius:0 0 10px 0;
+    border-radius: 0 0 10px 0;
+    top:-5px;
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+}
+ul.left-qus-pane li .curve-effect:before{
+    -moz-border-radius: 0 10px 0 0;
+    -webkit-border-radius: 0 10px 0 0;
+    border-radius: 0 10px 0 0;
+    bottom: -5px;
+    border-right: 5px solid #fff;
+    border-top: 5px solid #fff;
+}
+.line-height-19{
+    line-height: 19px;
+}
+ul.left-qus-pane li.active-effect .count-highlight{
+    background-color: #4c5181;
+    color: #fff;
+}
+.count-highlight{
+    background-color: #666cab;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-weight: 400;
+    font-size: 12px;
+    margin-right: 10px;
+    color: #ffffff;
+}
+.i_form_question{
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+}
+.mb-8{
+    margin-bottom: 8px;
+}
+.custom-control-input:not(:checked)~.custom-control-label::before{
+    transition: 0.2s all ease-in-out;
+}
+.custom-control-label{
+    cursor: pointer;
+}
+.custom-radio:hover .custom-control-input:not(:checked)~.custom-control-label::before{
+    transform: scale(1.2);
+    background-color: #f8f8f8;
+}
+ul.left-qus-pane::before{
+    content: "";
+    position: absolute;
+    height: calc(100% - 60px);
+    width: 1px;
+    border-right: 1px dashed #fff;
+    top: 25px;
+    left: 32px;
+}
+.not-eligible-icon{
+    width: 80px;
+}

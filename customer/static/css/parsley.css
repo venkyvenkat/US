@@ -1,0 +1,45 @@
+/*Parsley Validations*/
+.form-horizontal.form-group.message-container:empty + .form-group {
+    border-top-width: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.form-horizontal.form-group.message-container > .alert {
+    margin-bottom: 0;
+}
+.parsley-errors-list {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+.parsley-errors-list.filled {
+    display: block;
+}
+.parsley-errors-list > li {
+    font-size: 12px;
+    margin-bottom:-18px;
+    list-style: none;
+    color: #ff0000;
+    position: relative;
+}
+.parsley-error {
+    border-color: #ff0000 !important;
+}
+.parsley-custom-error-message {
+    color: #ff0000;
+}
+.parsley-error.custom-checkbox:hover > label:before,
+.parsley-error.custom-checkbox > label:before,
+.parsley-error.custom-radio:hover > label:before,
+.parsley-error.custom-radio > label:before {
+    border: 1px solid #ff0000;
+}
+.parsley-error.custom-checkbox > input[type="checkbox"]:checked + label:before,
+.parsley-error.custom-radio > input[type="checkbox"]:checked + label:before {
+    border-color: #ff0000;
+    background-color: #ff0000;
+}
+.parsley-error.custom-checkbox > label,
+.parsley-error.custom-radio > label {
+    color: #ff0000;
+}
