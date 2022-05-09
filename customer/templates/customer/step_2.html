@@ -1,0 +1,74 @@
+{% extends 'customer/layout.html' %}
+{% block content %}
+{% load static %}
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <div class="page-title-box">
+                    <h4 class="font-size-18">Form I-90</h4>
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item active">Green Card Renewal or Replacement Qualification Quiz</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        
+        <div class="d-flex form-card-custom">
+           {% include 'customer/menu.html' %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>{{main_title}}</h2>
+                            <p class="card-title-desc">{{sub_title}}</p>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{% if message.tags == 'success' %}success{% else %}danger{% endif %} alert-dismissible">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% load crispy_forms_field %}
+                            <form class="custom-validation" method="POST" id="customerform">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                <div class="form-group" id="div_{{field.name}}">
+                                    {% if field.help_text %}
+                                        <h2>{{field.help_text}}</h2>
+                                    {% endif %}
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                    {% crispy_field field 'class' 'form-control' %}
+                                </div>
+                                {% endfor %}
+                                <div class="form-group mb-0">
+                                    <div>
+                                        <ul class="p-0 mt-4 d-flex justify-content-start list-style-none">
+                                            <li><a href="/{{backurl}}" class="btn btn-primary">Back</a></li>
+                                        </ul>
+                                        <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
+                                            {% if menu == 'step_9' %}
+                                                {% if objstatus == 1 %}
+                                                    Update
+                                                {% else %}
+                                                    Submit
+                                                {% endif %}
+                                            {% else %}
+                                                Next
+                                            {% endif %}
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->   
+        </div>
+    </div> <!-- container-fluid -->
+</div>
+{% endblock %} 

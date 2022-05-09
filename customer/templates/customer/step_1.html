@@ -1,0 +1,95 @@
+{% extends 'customer/layout.html' %}
+{% block content %}
+{% load static %}
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <div class="page-title-box">
+                    <h4 class="font-size-18">Form I-90</h4>
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item active">Green Card Renewal or Replacement Qualification Quiz</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        
+        <div class="d-flex form-card-custom">
+           {% include 'customer/menu.html' %}
+           <!-- 
+            <div class="i_form_question">
+            <h6 class="font-size-18 mb-3">Select your current immigration status:</h6>
+            <ul class="list-style-none mb-0 p-0">
+                <li class="mb-8">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="option-group-id-1" name="option-group-1" class="custom-control-input">
+                        <label class="custom-control-label font-weight-normal font-size-16" for="option-group-id-1">
+                            Lawful permanent Resident
+                        </label>
+                    </div>
+                </li>
+                <li class="mb-8">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="option-group-id-2" name="option-group-1" class="custom-control-input">
+                        <label class="custom-control-label font-weight-normal font-size-16" for="option-group-id-2">
+                            Permanent Resident – In Commuter status
+                        </label>
+                    </div>
+                </li>
+                <li class="mb-8">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="option-group-id-3" name="option-group-1" class="custom-control-input">
+                        <label class="custom-control-label font-weight-normal font-size-16" for="option-group-id-3">
+                            Conditional Permanent Resident
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <ul class="p-0 mt-4 d-flex justify-content-start list-style-none">
+                <li><a href="i-90-form-section-a.html" class="btn btn-primary">Continue</a></li>
+            </ul>
+           </div> 
+            -->
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Reason For Application </h4>
+                            <form class="custom-validation" method="POST">
+                                {% csrf_token %}
+                                <div class="i_form_question">
+                                    {% for field in form %}
+                                    <div id="{{field.name}}">
+                                        <h6 class="font-size-18 mb-3">:{{field.label}}</h6>
+                                        {{field}}
+                                    </div>
+                                    {% endfor %}
+                                    <div class="alert alert-success" id="succ_alert" {% if objstatus == 0 %}style="display: none;"{% endif %}>
+                                        Congratulations, you’re likely eligible to file Form I-90
+                                        Please click on “Next” to continue your application.
+                                    </div>
+                                    <div class="alert alert-danger" id="err_alert" style="display:none;">
+                                        You're likely Not eligible to file Form I-90
+                                    </div>
+                                    <div class="form-group mb-0" id="next_butt" {% if objstatus == 0 %}style="display: none;"{% endif %}>
+                                        <div>
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
+                                                Next
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->   
+        </div>
+    </div> <!-- container-fluid -->
+</div>
+{% endblock %} 

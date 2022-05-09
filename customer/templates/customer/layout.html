@@ -1,0 +1,512 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Dashboard | Veltrix - Responsive Bootstrap 4 Admin Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+	<meta content="Themesbrand" name="author" />
+	<!-- App favicon -->
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+	<link href="{% static 'libs/chartist/chartist.min.css' %}" rel="stylesheet">
+	<!-- Bootstrap Css -->
+	<link href="{% static 'css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+	<!-- Icons Css -->
+	<link href="{% static 'css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+	<!-- App Css-->
+	<link href="{% static 'css/app.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+	<link href="{% static 'css/common.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'css/parsley.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'css/zebra_datepicker.min.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body data-sidebar="dark">
+	<!-- Begin page -->
+	<div id="layout-wrapper">
+		<header id="page-topbar">
+			<div class="navbar-header">
+				<div class="d-flex">
+					<!-- LOGO -->
+					<div class="navbar-brand-box">
+						<a href="index.html" class="logo logo-dark">
+							<span class="logo-sm">
+								<img src="{% static 'logo.png' %}" alt="" height="22">
+							</span>
+							<span class="logo-lg">
+								<img src="{% static 'logo.png' %}" alt="" height="17">
+							</span>
+						</a>
+
+						<a href="index.html" class="logo logo-light">
+							<span class="logo-sm">
+								<img src="{% static 'logo.png' %}" alt="" height="22">
+							</span>
+							<span class="logo-lg">
+								<img src="{% static 'logo.png' %}" alt="" height="18">
+							</span>
+						</a>
+					</div>
+
+					<button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+						<i class="mdi mdi-menu"></i>
+					</button>
+				</div>
+
+				<div class="d-flex">
+					  
+
+					<div class="dropdown d-none d-lg-inline-block">
+						<button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+							<i class="mdi mdi-fullscreen"></i>
+						</button>
+					</div>
+					<div class="dropdown d-inline-block">
+						<button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img class="rounded-circle header-profile-user" src="{% static 'images/users/user-4.jpg' %}"
+								alt="Header Avatar">
+						</button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<!-- item-->
+							<!-- <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i> Profile</a>
+							<a class="dropdown-item" href="#"><i class="mdi mdi-wallet font-size-17 align-middle mr-1"></i> My Wallet</a>
+							<a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings font-size-17 align-middle mr-1"></i> Settings</a>
+							<a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline font-size-17 align-middle mr-1"></i> Lock screen</a>
+							<div class="dropdown-divider"></div> -->
+							<a class="dropdown-item text-danger" href="/logout"><i class="bx bx-power-off font-size-17 align-middle mr-1 text-danger"></i> Logout</a>
+						</div>
+					</div>
+
+					<!-- <div class="dropdown d-inline-block">
+						<button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+							<i class="mdi mdi-settings-outline"></i>
+						</button>
+					</div> -->
+		
+				</div>
+			</div>
+		</header>
+
+		<!-- ========== Left Sidebar Start ========== -->
+		<div class="vertical-menu">
+
+			<div data-simplebar class="h-100">
+
+				<!--- Sidemenu -->
+				<div id="sidebar-menu">
+					<!-- Left Menu Start -->
+					<ul class="metismenu list-unstyled" id="side-menu">
+						<li class="menu-title">Agent</li>
+
+						<li>
+							<a href="/dashboard" class="waves-effect">
+								<i class="ti-home"></i>
+								<span>Dashboard</span>
+							</a>
+						</li>
+						<!-- <li>
+							<a href="/dashboard" class="waves-effect">
+								<i class="fa fa-users"></i>
+								<span>Customers</span>
+							</a>
+						</li> -->
+						<li>
+							<a href="javascript: void(0);" class="has-arrow waves-effect">
+								<i class="fa fa-file"></i>
+								<span>Application</span>
+							</a>
+							<ul class="sub-menu" aria-expanded="false">
+								<li><a href="{% url 'customer:step-1' %}">I-90 Form</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="javascript: void(0);" class="has-arrow waves-effect">
+								<i class="ti-package"></i>
+								<span>Orders</span>
+							</a>
+							<ul class="sub-menu" aria-expanded="false">
+								<li><a href="/orders/paid">Paid</a></li>
+								<li><a href="/orders/unpaid">Un-paid</a></li>
+							</ul>
+						</li>
+						<!-- <li>
+							<a href="payments.html" class="waves-effect">
+								<i class="fa fa-credit-card"></i>
+								<span>Payments</span>
+							</a>
+						</li>
+						<li>
+							<a href="downloads.html" class="waves-effect">
+								<i class="fa fa-download"></i>
+								<span>Downloads</span>
+							</a>
+						</li> -->
+					</ul>
+				</div>
+				<!-- Sidebar -->
+			</div>
+		</div>
+		<!-- Left Sidebar End -->
+
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+		<!-- ============================================================== -->
+		<div class="main-content">
+
+			{% block content %}
+			{% endblock %} 
+			<!-- End Page-content -->
+
+
+			
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12">
+							© <script>document.write(new Date().getFullYear())</script> Veltrix<span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+		</div>
+		<!-- end main content-->
+
+	</div>
+	<!-- END layout-wrapper -->
+
+	<!-- Right Sidebar -->
+	<div class="right-bar">
+		<div data-simplebar class="h-100">
+			<div class="rightbar-title px-3 py-4">
+				<a href="javascript:void(0);" class="right-bar-toggle float-right">
+					<i class="mdi mdi-close noti-icon"></i>
+				</a>
+				<h5 class="m-0">Settings</h5>
+			</div>
+
+			<!-- Settings -->
+			<hr class="mt-0" />
+			<h6 class="text-center">Choose Layouts</h6>
+
+			<div class="p-4">
+				<div class="mb-2">
+					<img src="{% static 'images/layouts/layout-1.jpg' %}" class="img-fluid img-thumbnail" alt="">
+				</div>
+				<div class="custom-control custom-switch mb-3">
+					<input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
+					<label class="custom-control-label" for="light-mode-switch">Light Mode</label>
+				</div>
+
+				<div class="mb-2">
+					<img src="{% static 'images/layouts/layout-2.jpg' %}" class="img-fluid img-thumbnail" alt="">
+				</div>
+				<div class="custom-control custom-switch mb-3">
+					<input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="{% static 'css/bootstrap-dark.min.css' %}" 
+						data-appStyle="{% static 'css/app-dark.min.css' %}" />
+					<label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
+				</div>
+
+			</div>
+
+		</div> <!-- end slimscroll-menu-->
+	</div>
+	<!-- /Right-bar -->
+
+	<!-- Right bar overlay-->
+	<div class="rightbar-overlay"></div>
+
+	<!-- JAVASCRIPT -->
+	<script src="{% static 'libs/jquery/jquery.min.js' %}"></script>
+	<script src="{% static 'libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'libs/metismenu/metisMenu.min.js' %}"></script>
+	<script src="{% static 'libs/simplebar/simplebar.min.js' %}"></script>
+	<script src="{% static 'libs/node-waves/waves.min.js' %}"></script>
+	<!-- Peity chart-->
+	<script src="{% static 'libs/peity/jquery.peity.min.js' %}"></script>
+	<!-- Plugin Js-->
+	<script src="{% static 'libs/chartist/chartist.min.js' %}"></script>
+	<script src="{% static 'libs/chartist-plugin-tooltips/chartist-plugin-tooltip.min.js' %}"></script>
+	<script src="{% static 'js/pages/dashboard.init.js' %}"></script>
+	<script src="{% static 'js/app.js' %}"></script>
+	<script src="{% static 'js/parsley.min.js' %}"></script>
+	<script src="{% static 'js/zebra_datepicker.min.js' %}"></script>
+	<hr>
+</body>
+<script>
+var menu = '{{menu}}';
+if(menu == 'step_1'){
+	var immigration_status = '{{form.immigration_status.value}}';
+	Get_Section(immigration_status);
+}else if(menu == 'step_3'){
+	$("#div_appartment_value").hide();
+	var appartment_value = '{{form.appartment.value}}';
+	var permanent_resident_card = '{{form.permanent_resident_card.value}}';
+	Get_Status(permanent_resident_card);
+	var pysical_address = '{{form.pysical_address.value}}';
+	Pysical_Add(pysical_address);
+	if(appartment_value!='' && (appartment_value =='2' || appartment_value == '4')){
+		$("#div_appartment_value").show();
+		var value_text = (appartment_value =='2')?'Enter Appartment name':'Enter floor number'
+		$("#div_appartment_value").children('label').html(value_text);
+	}else{
+		$("#div_appartment_value").hide();
+	}
+}else if(menu == 'step_4'){
+	var appartment_value = '{{form.appartment.value}}';
+	if(appartment_value!='' && (appartment_value =='2' || appartment_value == '4')){
+		$("#div_appartment_value").show();
+		var value_text = (appartment_value =='2')?'Enter Appartment name':'Enter floor number'
+		$("#div_appartment_value").children('label').html(value_text);
+	}else{
+		$("#div_appartment_value").hide();
+	}
+}else if(menu == 'step_8'){
+	var val_data = '{{form.status.value}}';
+	Get_Step8(val_data);
+}else if(menu == 'step_9'){
+	// $("#id_explanation_0").removeAttr("required");
+	// $("#id_explanation_1").removeAttr("required");
+	// $("#id_explanation_2").removeAttr("required");
+	var div_intepreter_appartment_value = '{{form.intepreter_appartment.value}}';
+	if(div_intepreter_appartment_value!='' && (div_intepreter_appartment_value =='2' || div_intepreter_appartment_value == '4')){
+		$("#div_intepreter_appartment_value").show();
+	}else{
+		$("#div_intepreter_appartment_value").hide();
+	}
+	var value_text = (div_intepreter_appartment_value =='2')?'Enter Appartment name':'Enter floor number'
+	$("#div_intepreter_appartment_value").children('label').html(value_text);
+	var div_intepreter_preparer_appartment_value = '{{form.preparer_appartment.value}}';
+	if(div_intepreter_preparer_appartment_value!='' && (div_intepreter_preparer_appartment_value =='2' || div_intepreter_preparer_appartment_value == '4')){
+		$("#div_intepreter_preparer_appartment_value").show();
+	}else{
+		$("#div_intepreter_preparer_appartment_value").hide();
+	}
+	var value_text = (div_intepreter_preparer_appartment_value =='2')?'Enter Appartment name':'Enter floor number'
+	$("#div_intepreter_preparer_appartment_value").children('label').html(value_text);
+	var interpreter_prepare_information_status =  '{{form.interpreter_prepare_information_status.value}}';
+	Interpreter(interpreter_prepare_information_status);
+	var preparer_status =  '{{form.preparer_status.value}}';
+	Preferrer(preparer_status);
+	var accomidation_status =  '{{form.accomidation_status.value}}';
+	AccOmStatus(accomidation_status);
+}
+$(document).ready(function(){
+	$(".checkboxselectmultiple").removeClass("form-control");
+	$("#customerform").parsley();
+});
+$('#id_date_of_birth, #id_resident_since').Zebra_DatePicker({
+	format: 'Y-m-d',
+});
+function Get_Number(id){
+	if($("#id_alien_registration_number_status").is(':checked')){
+		$("#div_alien_registration_number").hide();
+	}else{
+		$("#div_alien_registration_number").show();
+	}
+}
+function Get_Category(){
+	if($("#id_category_status").is(':checked')){
+		$("#div_category").hide();
+	}else{
+		$("#div_category").show();
+	}
+}
+function Get_Residence(id){
+	if($("#id_resident_since_status").is(':checked')){
+		$("#div_resident_since").hide();
+	}else{
+		$("#div_resident_since").show();
+	}
+}
+function Get_City_Status(status){
+	if(status=='True'){
+		$("#err_alert").hide();
+		$("#succ_alert").show();
+		$("#next_butt").show();
+	}else{
+		$("#err_alert").show();
+		$("#succ_alert").hide();
+		$("#next_butt").hide();
+	}
+}
+function Take_name(id){
+	if(id==2 || id==4){
+		if(id==2){
+			$("#div_appartment_value").show();
+			$("#div_appartment_value").children('label').html('Enter Appartment name');
+			$("#div_intepreter_appartment_value").show();
+			$("#div_intepreter_appartment_value").children('label').html('Enter Appartment name');
+			$("#div_preparer_appartment_value").show();
+			$("#div_preparer_appartment_value").children('label').html('Enter Appartment name');
+		}else{
+			$("#div_appartment_value").show();
+			$("#div_appartment_value").children('label').html('Enter Floor number');
+			$("#div_intepreter_appartment_value").show();
+			$("#div_intepreter_appartment_value").children('label').html('Enter Floor number');
+			$("#div_preparer_appartment_value").show();
+			$("#div_preparer_appartment_value").children('label').html('Enter Floor number');
+		}
+	}else{
+		$("#div_appartment_value").hide();
+		$("#div_preparer_appartment_value").hide();
+		$("#div_intepreter_appartment_value").hide();
+	}
+}
+function Get_AccomData(id){
+	if(id=='yes'){
+		$("#div_explanation").show();
+	}else{
+		$("#div_explanation").hide();
+	}
+}
+function Get_Status(permanent_resident_card){
+	$("#div_permanent_resident_card_first_name").hide();
+	$("#div_permanent_resident_card_middle_name").hide();
+	$("#div_permanent_resident_card_last_name").hide();
+	if(permanent_resident_card!='' && permanent_resident_card=='yes'){
+		$("#div_permanent_resident_card_first_name").show();
+		$("#div_permanent_resident_card_middle_name").show();
+		$("#div_permanent_resident_card_last_name").show();
+	}
+}
+function Pysical_Add(pysical_address){
+	$("#div_in_care_of_name").hide();
+	$("#div_streat_number_and_name").hide();
+	$("#div_appartment").hide();
+	$("#div_appartment_value").hide();
+	$("#div_city_or_town").hide();
+	$("#div_state").hide();
+	$("#div_country").hide();
+	$("#div_zipcode").hide();
+	$("#div_province").hide();
+	$("#div_postal_code").hide();
+	if(pysical_address!='' && pysical_address=='yes'){
+		$("#div_in_care_of_name").show();
+		$("#div_streat_number_and_name").show();
+		$("#div_appartment").hide();
+		$("#div_appartment_value").show();
+		$("#div_city_or_town").show();
+		$("#div_state").show();
+		$("#div_country").show();
+		$("#div_zipcode").show();
+		$("#div_province").show();
+		$("#div_postal_code").show();
+	}
+}
+function Get_Step8(id){
+	$("#div_consular_port_of_entry").hide();
+	$("#div_consula_state").hide();
+	$("#div_consular_issued_visa").hide();
+	$("#div_consular_applied_visa").hide();
+
+	$("#div_granted_enter_city_and_state_name").hide();
+	$("#div_adjustment_granted_status").hide();
+	$("#div_adjustment_status_interview").hide();
+	$("#div_apply_enter_city_and_state_name").hide();
+	$("#div_adjustment_granted_status").hide();
+
+	if(parseInt(id)==1){
+		$("#div_consular_port_of_entry").show();
+		$("#div_consula_state").show();
+		$("#div_consular_issued_visa").show();
+		$("#div_consular_applied_visa").show();
+	}
+	if(parseInt(id)==2){
+		$("#div_granted_enter_city_and_state_name").show();
+		$("#div_adjustment_granted_status").show();
+		$("#div_adjustment_status_interview").show();
+		$("#div_apply_enter_city_and_state_name").show();
+		$("#div_adjustment_granted_status").show();
+	}
+}
+function Interpreter(id){
+	$("#div_intepreter_email").hide();
+	$("#div_intepreter_mobile_number").hide();
+	$("#div_intepreter_daytime_phone_number").hide();
+	$("#div_intepreter_postal_code").hide();
+	$("#div_intepreter_province").hide();
+	$("#div_intepreter_zipcode").hide();
+	$("#div_intepreter_country").hide();
+	$("#div_intepreter_state").hide();
+	$("#div_intepreter_city").hide();
+	$("#div_intepreter_appartment_value").hide();
+	$("#div_intepreter_appartment").hide();
+	$("#div_intepreter_streat_number_and_name").hide();
+	$("#div_interpreter_business_or_organization_name").hide();
+	$("#div_interpreter_last_name").hide();
+	$("#div_interpreter_first_name").hide();
+	$("#div_interpreter_language").hide();
+	if(id!='' && id!='None' && id=='yes'){
+		$("#div_intepreter_email").show();
+		$("#div_intepreter_mobile_number").show();
+		$("#div_intepreter_daytime_phone_number").show();
+		$("#div_intepreter_postal_code").show();
+		$("#div_intepreter_province").show();
+		$("#div_intepreter_zipcode").show();
+		$("#div_intepreter_country").show();
+		$("#div_intepreter_state").show();
+		$("#div_intepreter_city").show();
+		$("#div_intepreter_appartment_value").show();
+		$("#div_intepreter_appartment").show();
+		$("#div_intepreter_streat_number_and_name").show();
+		$("#div_interpreter_business_or_organization_name").show();
+		$("#div_interpreter_last_name").show();
+		$("#div_interpreter_first_name").show();
+		$("#div_interpreter_language").show();
+	}
+}
+function Preferrer(id){
+	$("#div_preparer_email").hide();
+	$("#div_preparer_mobile_number").hide();
+	$("#div_preparer_daytime_phone_number").hide();
+	$("#div_preparer_postal_code").hide();
+	$("#div_preparer_province").hide();
+	$("#div_preparer_zipcode").hide();
+	$("#div_preparer_country").hide();
+	$("#div_preparer_state").hide();
+	$("#div_preparer_city").hide();
+	$("#div_preparer_appartment_value").hide();
+	$("#div_preparer_appartment").hide();
+	$("#div_preparer_streat_number_and_name").hide();
+	$("#div_preparer_business_or_organization_name").hide();
+	$("#div_preparer_last_name").hide();
+	$("#div_preparer_first_name").hide();
+	if(id!='' && id!='None' && (parseInt(id)==2 || parseInt(id)==3)){
+		$("#div_preparer_email").show();
+		$("#div_preparer_mobile_number").show();
+		$("#div_preparer_daytime_phone_number").show();
+		$("#div_preparer_postal_code").show();
+		$("#div_preparer_province").show();
+		$("#div_preparer_zipcode").show();
+		$("#div_preparer_country").show();
+		$("#div_preparer_state").show();
+		$("#div_preparer_city").show();
+		$("#div_preparer_appartment_value").show();
+		$("#div_preparer_appartment").show();
+		$("#div_preparer_streat_number_and_name").show();
+		$("#div_preparer_business_or_organization_name").show();
+		$("#div_preparer_last_name").show();
+		$("#div_preparer_first_name").show();
+	}
+}
+function AccOmStatus(id){
+	$("#div_explanation").show();
+	if(id=='yes'){
+		$("#div_explanation").show();
+	}
+}
+function Get_Section(id){
+	$("#immigration_section").hide();
+	var txt = "Section A(To be used only by a lawful permanent resident or permanent resident in Commuter status ) ";
+	if(parseInt(id)==2){
+		var txt = "Section B(To be used only by a conditional permanent resident ) ";
+	}
+	$("#immigration_section").children("h6").html(txt);
+	if(id!='None'){
+		$("#immigration_section").show();
+	}
+}
+</script>
+</html>
